@@ -11,3 +11,5 @@ github_repo 'chef/chef' do
   refname 'master'
   destination "#{Chef::Config[:file_cache_path]}/chef"
 end
+
+appbundle "#{Chef::Config[:file_cache_path]}/chef"
