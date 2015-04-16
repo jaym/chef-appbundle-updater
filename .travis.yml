@@ -9,7 +9,9 @@ bundler_args: --without development
 
 addons:
   apt:
+    sources:
+    - chef-stable-precise
     packages:
-      chefdk
+    - chefdk
 
 script: berks vendor
