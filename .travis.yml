@@ -1,0 +1,13 @@
+sudo: false
+cache: bundler
+language: ruby
+
+rvm:
+- "2.1"
+
+addons:
+  apt:
+    packages:
+      chefdk
+
+script: berks vendor
