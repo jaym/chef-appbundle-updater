@@ -95,3 +95,7 @@ Vagrantfile
 ##########
 .travis.yml
 vendor
+
+# Kitchen #
+###########
+.kitchen
