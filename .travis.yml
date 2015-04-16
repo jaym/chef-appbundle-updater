@@ -20,5 +20,6 @@ deploy:
   api_key:
     secure: llK84l6t3ulj7mrTmaBt5xUniunIHitwF19F7CPq5EvKEVywjir7hydnj+hzO+USAYX5tG7R3EjcNGc4ZKKQBuJ8b4LedZc26MTj7DRpdkl4HXdsaekme7cPkcj9+uI8TuxijPnSW1XH+p2Bo4dMyd9YhwfRdnr7TRdByqvUTT0=
   file: cookbooks.tar.gz
+  skip_cleanup: true
   on:
-    tag: true
+    tags: true
