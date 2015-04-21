@@ -7,6 +7,7 @@ provisioner:
 
 platforms:
   - name: ubuntu-14.04
+  - name: windows-8.1
 
 suites:
   - name: default
