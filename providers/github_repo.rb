@@ -77,7 +77,7 @@ end
 private
 
 def is_sha1?
-  false
+  (new_resource.refname =~ /\b([a-f0-9]{40})\b/) != nil
 end
 
 def refname_to_sha
@@ -88,7 +88,7 @@ def refname_to_sha
           check_refs
         end
 
-    if s.nil?
+    if s.nil? || s.length == 0
       raise "could not find #{new_resource.refname} in https://github.com/#{owner}/#{repo}"
     else
       s
@@ -112,6 +112,7 @@ def check_refs
       end
     end
   end
+  []
 end
 
 def refspecs
