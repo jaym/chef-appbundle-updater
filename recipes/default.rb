@@ -12,6 +12,8 @@ github_repo 'chef/chef' do
   destination node['chef_appbundle_updater']['destination']
 end
 
+bundler node['chef_appbundle_updater']['destination']
+
 # This will be part of Chef 12.4
 rake 'install_components' do
   cwd node['chef_appbundle_updater']['destination']
