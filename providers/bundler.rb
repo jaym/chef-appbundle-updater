@@ -16,7 +16,13 @@ end
 
 action :install do
   converge_by("Install gem dependencies") do
-    shell_out!("#{bundle} install", :cwd => new_resource.path)
+    shell_out!("#{bundle} install #{new_resource.args}", :cwd => new_resource.path)
+  end
+end
+
+action :exec do
+  converge_by("Execute in the context of bundler") do
+    shell_out("#{bundle} exec #{new_resource.args}", :cwd => new_resource.path)
   end
 end
 
