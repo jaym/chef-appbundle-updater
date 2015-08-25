@@ -15,8 +15,15 @@ def load_current_resource
 end
 
 action :run do
-  converge_by("Running rake #{new_resource.task}") do
-    shell_out!("#{rake} #{new_resource.task}", :cwd => new_resource.cwd)
+  if new_resource.bundle
+    bundler new_resource.cwd do
+      action :exec
+      args "rake #{new_resource.task}"
+    end
+  else
+    converge_by("Running rake #{new_resource.task}") do
+      shell_out!("#{rake} #{new_resource.task}", :cwd => new_resource.cwd)
+    end
   end
 end
 
