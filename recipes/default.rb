@@ -23,4 +23,10 @@ rake 'install_components' do
   end
 end
 
+# Appbundler now needs an actual gem to be installed
+# and points the stubs to it.
+rake 'install' do
+  cwd node['chef_appbundle_updater']['destination']
+end
+
 appbundle node['chef_appbundle_updater']['destination']
